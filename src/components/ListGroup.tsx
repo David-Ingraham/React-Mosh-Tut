@@ -1,27 +1,24 @@
-function ListGroup (){
+function ListGroup() {
+  let items = ["nyc", "san fran", "tokyo", "london", "paris"];
 
-    return (
-        <> 
-            <h1>List</h1>
-            <ul className="list-group">
-            <li className="list-group-item">Cras justo odio</li>
-            <li className="list-group-item">Dapibus ac facilisis in</li>
-            <li className="list-group-item">Morbi leo risus</li>
-            <li className="list-group-item">Porta ac consectetur ac</li>
-            <li className="list-group-item">Vestibulum at eros</li>
-            </ul>
-        </>
-    )
+  return (
+    <>
+      <h1>List</h1>
 
+      {items.length === 0 && <p>No item found</p>}
+      <ul className="list-group">
+        {items.map((item, index) => (
+          <li
+            className="list-group-item "
+            key={item}
+            onClick={(event) => console.log(event)}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
-    
-
- 
-    
- 
-
-
-
-
-export default ListGroup
+export default ListGroup;
